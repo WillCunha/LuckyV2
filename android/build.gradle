@@ -1,27 +1,25 @@
 buildscript {
     ext {
-        buildToolsVersion = "34.0.0"
-        minSdkVersion = 21
-        compileSdkVersion = 34
-        targetSdkVersion = 34
-        ndkVersion = "25.1.8937393"
-        kotlinVersion = '1.9.0'
-
-        googlePlayServicesAuthVersion = "21.1.0"
-        googleServicesVersion = "4.4.1"
-        firebaseCrashlyticsPluginVersion = "2.9.9"
+        buildToolsVersion = "33.0.2"
+        minSdkVersion = 24
+        compileSdkVersion = 33
+        targetSdkVersion = 33
+        kotlinVersion = "1.8.22"
     }
     repositories {
         google()
         mavenCentral()
     }
     dependencies {
-        classpath("com.android.tools.build:gradle")
-        classpath("com.facebook.react:react-native-gradle-plugin")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
-             classpath("com.google.gms:google-services:$googleServicesVersion")
-        classpath("com.google.firebase:firebase-crashlytics-gradle:$firebaseCrashlyticsPluginVersion")
+        classpath("com.android.tools.build:gradle:7.4.2")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
     }
 }
 
-apply plugin: "com.facebook.react.rootproject"
+allprojects {
+    repositories {
+        mavenLocal()
+        google()
+        mavenCentral()
+    }
+}
